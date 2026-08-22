@@ -1,0 +1,144 @@
+.main {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+  position: relative;
+  overflow: hidden;
+}
+
+.scanline {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, var(--signal-cyan), transparent);
+  opacity: 0.6;
+  box-shadow: 0 0 20px 2px rgba(61, 219, 217, 0.5);
+}
+
+.panel {
+  width: 100%;
+  max-width: 460px;
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-lg);
+  padding: 40px 36px;
+}
+
+.logo {
+  width: 72px;
+  height: 72px;
+  object-fit: contain;
+  display: block;
+  margin: 0 auto 16px;
+}
+
+.eyebrow {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 0.14em;
+  color: var(--signal-cyan);
+  text-align: center;
+}
+
+.title {
+  font-size: 28px;
+  margin-top: 10px;
+  color: var(--text-primary);
+  text-align: center;
+}
+
+.subtitle {
+  margin-top: 8px;
+  font-size: 14px;
+  line-height: 1.5;
+  color: var(--text-muted);
+  text-align: center;
+}
+
+.divider {
+  height: 1px;
+  background: var(--line);
+  margin: 24px 0 20px;
+}
+
+.statusRow {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--signal-green);
+  box-shadow: 0 0 8px 1px rgba(52, 211, 153, 0.7);
+}
+
+.statusText {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  letter-spacing: 0.08em;
+  color: var(--text-muted);
+}
+
+.moduleList {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.moduleItem {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 4px;
+  border-bottom: 1px solid var(--line);
+}
+
+.moduleLabel {
+  font-size: 13px;
+  color: var(--text-primary);
+}
+
+.modulePending {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  color: var(--text-faint);
+}
+
+.moduleDone {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  color: var(--signal-green);
+}
+
+.loginLink {
+  display: block;
+  margin-top: 24px;
+  font-size: 13px;
+  color: var(--signal-cyan);
+  text-align: center;
+  transition: opacity 0.15s var(--ease-out);
+}
+.loginLink:hover {
+  opacity: 0.75;
+}
+
+.gateLink {
+  display: block;
+  margin-top: 10px;
+  font-size: 13px;
+  color: var(--signal-amber);
+  text-align: center;
+  transition: opacity 0.15s var(--ease-out);
+}
+.gateLink:hover {
+  opacity: 0.75;
+}

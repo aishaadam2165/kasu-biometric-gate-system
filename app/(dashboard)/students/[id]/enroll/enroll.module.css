@@ -1,0 +1,35 @@
+.backLink {
+  background: none;
+  border: none;
+  color: var(--ink-muted);
+  font-size: 13px;
+  margin-bottom: 20px;
+  cursor: pointer;
+  padding: 0;
+  transition: color 0.15s var(--ease-out);
+}
+.backLink:hover {
+  color: var(--ink-primary);
+}
+
+.heading {
+  font-size: 18px;
+  color: var(--ink-primary);
+}
+
+.subheading {
+  font-size: 13px;
+  color: var(--ink-muted);
+  margin-bottom: 24px;
+}
+
+.stepperWrap {
+  max-width: 480px;
+}
+
+.loading {
+  padding: 40px;
+  text-align: center;
+  color: var(--ink-muted);
+  font-size: 13px;
+}

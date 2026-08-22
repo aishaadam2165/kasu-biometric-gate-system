@@ -1,0 +1,65 @@
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 13px;
+}
+
+.th {
+  text-align: left;
+  padding: 10px 12px;
+  border-bottom: 1px solid var(--line);
+  color: var(--text-faint);
+  font-weight: 500;
+  font-size: 11px;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.row {
+  border-bottom: 1px solid var(--line);
+  transition: background 0.15s var(--ease-out);
+}
+.row:hover {
+  background: var(--panel-raised);
+}
+
+.td {
+  padding: 12px;
+  color: var(--text-primary);
+}
+
+.mono {
+  font-family: var(--font-mono);
+}
+
+.link {
+  color: var(--signal-cyan);
+}
+
+.badge {
+  font-size: 11px;
+  padding: 3px 8px;
+  border-radius: 999px;
+}
+
+.badgeGreen {
+  background: var(--signal-green-dim);
+  color: var(--signal-green);
+}
+
+.badgeAmber {
+  background: var(--signal-amber-dim);
+  color: var(--signal-amber);
+}
+
+.badgeRed {
+  background: var(--signal-red-dim);
+  color: var(--signal-red);
+}
+
+.empty {
+  padding: 40px;
+  text-align: center;
+  color: var(--text-muted);
+  font-size: 13px;
+}

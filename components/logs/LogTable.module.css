@@ -1,0 +1,70 @@
+.panel {
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 13px;
+}
+
+.th {
+  text-align: left;
+  padding: 10px 12px;
+  border-bottom: 1px solid var(--line);
+  color: var(--text-faint);
+  font-weight: 500;
+  font-size: 11px;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.row {
+  border-bottom: 1px solid var(--line);
+}
+
+.td {
+  padding: 12px;
+  color: var(--text-primary);
+}
+
+.mono {
+  font-family: var(--font-mono);
+}
+
+.badge {
+  font-size: 11px;
+  padding: 3px 8px;
+  border-radius: 999px;
+  text-transform: capitalize;
+}
+
+.badgeGranted {
+  background: var(--signal-green-dim);
+  color: var(--signal-green);
+}
+
+.badgeDenied {
+  background: var(--signal-red-dim);
+  color: var(--signal-red);
+}
+
+.methodTag {
+  font-size: 11px;
+  color: var(--text-muted);
+}
+
+.remarks {
+  font-size: 11px;
+  color: var(--text-faint);
+}
+
+.empty {
+  padding: 40px;
+  text-align: center;
+  color: var(--text-muted);
+  font-size: 13px;
+}

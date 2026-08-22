@@ -1,0 +1,74 @@
+.sidebar {
+  width: 220px;
+  flex-shrink: 0;
+  background: var(--panel);
+  border-right: 1px solid var(--line);
+  min-height: 100vh;
+  padding: 28px 0;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 0 24px 24px;
+  border-bottom: 1px solid var(--line);
+  margin-bottom: 16px;
+}
+
+.brandLogo {
+  width: 36px;
+  height: 36px;
+  object-fit: contain;
+  flex-shrink: 0;
+}
+
+.brandText {
+  display: flex;
+  flex-direction: column;
+}
+
+.brandEyebrow {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 0.14em;
+  color: var(--signal-cyan);
+}
+
+.brandTitle {
+  font-size: 16px;
+  font-weight: 600;
+  margin-top: 4px;
+  color: var(--text-primary);
+}
+
+.nav {
+  display: flex;
+  flex-direction: column;
+}
+
+.navItem {
+  position: relative;
+  padding: 12px 24px;
+  font-size: 13px;
+  color: var(--text-muted);
+  transition: background 0.15s var(--ease-out), color 0.15s var(--ease-out);
+}
+.navItem:hover {
+  background: var(--panel-raised);
+  color: var(--text-primary);
+}
+
+.navItemActive {
+  color: var(--text-primary);
+  background: var(--panel-raised);
+}
+
+.activeBar {
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  background: var(--signal-cyan);
+}

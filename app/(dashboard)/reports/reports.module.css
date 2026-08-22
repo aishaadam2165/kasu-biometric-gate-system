@@ -1,0 +1,125 @@
+.controls {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  flex-wrap: wrap;
+  margin-bottom: 24px;
+}
+
+.periodGroup {
+  display: flex;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-sm);
+  overflow: hidden;
+}
+
+.periodButton {
+  background: var(--panel-raised);
+  border: none;
+  color: var(--text-muted);
+  font-size: 13px;
+  padding: 10px 16px;
+  cursor: pointer;
+}
+
+.periodButtonActive {
+  background: var(--signal-cyan);
+  color: #052e16;
+  font-weight: 600;
+}
+
+.dateInput {
+  background: var(--panel-raised);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-sm);
+  padding: 9px 12px;
+  font-size: 13px;
+  font-family: var(--font-mono);
+  color: var(--text-primary);
+}
+
+.spacer {
+  flex: 1;
+}
+
+.downloadButton {
+  display: inline-block;
+  background: var(--panel);
+  border: 1px solid var(--line);
+  color: var(--text-primary);
+  font-size: 13px;
+  border-radius: var(--radius-sm);
+  padding: 10px 16px;
+  cursor: pointer;
+  transition: background 0.15s var(--ease-out);
+}
+.downloadButton:hover {
+  background: var(--panel-raised);
+}
+
+.downloadButtonPdf {
+  border-color: var(--signal-red);
+  color: var(--signal-red);
+}
+
+.downloadButtonExcel {
+  border-color: var(--signal-green);
+  color: var(--signal-green);
+}
+
+.statsRow {
+  display: flex;
+  gap: 16px;
+  margin-bottom: 24px;
+  flex-wrap: wrap;
+}
+
+.statCard {
+  flex: 1;
+  min-width: 120px;
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-lg);
+  padding: 18px 20px;
+}
+
+.statLabel {
+  font-size: 11px;
+  color: var(--text-faint);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.statValue {
+  font-family: var(--font-display);
+  font-size: 26px;
+  color: var(--text-primary);
+  margin-top: 6px;
+}
+
+.statValueGreen {
+  color: var(--signal-green);
+}
+
+.statValueRed {
+  color: var(--signal-red);
+}
+
+.rangeLabel {
+  font-size: 13px;
+  color: var(--ink-muted);
+  margin-bottom: 16px;
+}
+
+.previewNote {
+  font-size: 11px;
+  color: var(--signal-amber);
+  margin-top: 8px;
+}
+
+.loading {
+  padding: 40px;
+  text-align: center;
+  color: var(--ink-muted);
+  font-size: 13px;
+}

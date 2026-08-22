@@ -1,0 +1,21 @@
+.heading {
+  font-size: 18px;
+  color: var(--ink-primary);
+  margin-bottom: 6px;
+}
+
+.subheading {
+  font-size: 13px;
+  color: var(--ink-muted);
+  margin-bottom: 24px;
+}
+
+.error {
+  background: var(--signal-red);
+  color: #ffffff;
+  font-size: 13px;
+  padding: 10px 12px;
+  border-radius: var(--radius-sm);
+  margin-bottom: 16px;
+  max-width: 560px;
+}

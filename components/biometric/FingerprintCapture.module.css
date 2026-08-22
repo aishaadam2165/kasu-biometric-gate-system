@@ -1,0 +1,115 @@
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  padding: 24px;
+}
+
+.scannerBox {
+  display: flex;
+  justify-content: center;
+}
+
+.pad {
+  width: 140px;
+  height: 140px;
+  border-radius: var(--radius-lg);
+  border: 2px solid var(--line);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-mono);
+  font-size: 12px;
+  letter-spacing: 0.08em;
+  color: var(--text-faint);
+  background: var(--panel-raised);
+  transition: border-color 0.3s var(--ease-out), box-shadow 0.3s var(--ease-out);
+}
+
+.padScanning {
+  border-color: var(--signal-cyan);
+  color: var(--signal-cyan);
+  box-shadow: 0 0 24px 2px rgba(61, 219, 217, 0.25);
+  animation: pulse 1.2s ease-in-out infinite;
+}
+
+.padCaptured {
+  border-color: var(--signal-green);
+  color: var(--signal-green);
+  font-size: 36px;
+}
+
+.scanButton {
+  background: var(--signal-cyan);
+  color: #052e16;
+  font-weight: 600;
+  font-size: 13px;
+  border: none;
+  border-radius: var(--radius-sm);
+  padding: 11px 20px;
+  cursor: pointer;
+  transition: opacity 0.15s var(--ease-out);
+}
+.scanButton:hover:not(:disabled) {
+  opacity: 0.9;
+}
+.scanButton:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.result {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+
+.resultRow {
+  display: flex;
+  gap: 8px;
+  font-size: 13px;
+}
+
+.resultLabel {
+  color: var(--text-muted);
+}
+
+.resultValue {
+  color: var(--signal-green);
+  font-family: var(--font-mono);
+}
+
+.retryButton {
+  background: transparent;
+  border: 1px solid var(--line);
+  color: var(--text-muted);
+  font-size: 12px;
+  border-radius: var(--radius-sm);
+  padding: 8px 14px;
+  cursor: pointer;
+}
+
+.error {
+  color: var(--signal-red);
+  font-size: 12px;
+}
+
+.hint {
+  font-size: 11px;
+  color: var(--text-faint);
+  text-align: center;
+  max-width: 320px;
+}
+
+@keyframes pulse {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.04); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .padScanning {
+    animation: none;
+  }
+}

@@ -1,0 +1,142 @@
+.backLink {
+  background: none;
+  border: none;
+  color: var(--ink-muted);
+  font-size: 13px;
+  margin-bottom: 16px;
+  cursor: pointer;
+  padding: 0;
+  transition: color 0.15s var(--ease-out);
+}
+.backLink:hover {
+  color: var(--ink-primary);
+}
+
+.infoCard {
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-lg);
+  padding: 24px 28px;
+  margin-bottom: 20px;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 8px;
+}
+
+.heading {
+  font-size: 18px;
+  color: var(--text-primary);
+}
+
+.matric {
+  font-size: 13px;
+  font-family: var(--font-mono);
+  color: var(--text-muted);
+  margin-top: 4px;
+}
+
+.headerRight {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.badge {
+  font-size: 11px;
+  padding: 4px 10px;
+  border-radius: 999px;
+}
+
+.badgeGreen {
+  background: var(--signal-green-dim);
+  color: var(--signal-green);
+}
+
+.badgeRed {
+  background: var(--signal-red-dim);
+  color: var(--signal-red);
+}
+
+.deactivateButton {
+  background: transparent;
+  border: 1px solid var(--signal-red);
+  color: var(--signal-red);
+  font-size: 12px;
+  border-radius: var(--radius-sm);
+  padding: 8px 14px;
+  cursor: pointer;
+  transition: background 0.15s var(--ease-out);
+}
+.deactivateButton:hover {
+  background: var(--signal-red-dim);
+}
+
+.reactivateButton {
+  background: transparent;
+  border: 1px solid var(--signal-green);
+  color: var(--signal-green);
+  font-size: 12px;
+  border-radius: var(--radius-sm);
+  padding: 8px 14px;
+  cursor: pointer;
+  transition: background 0.15s var(--ease-out);
+}
+.reactivateButton:hover {
+  background: var(--signal-green-dim);
+}
+
+.note {
+  font-size: 13px;
+  color: var(--text-muted);
+}
+
+.headerRowTwo {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 16px;
+  border-top: 1px solid var(--line);
+}
+
+.enrollButton {
+  background: transparent;
+  border: 1px solid var(--signal-cyan);
+  color: var(--signal-cyan);
+  font-size: 12px;
+  border-radius: var(--radius-sm);
+  padding: 8px 14px;
+  cursor: pointer;
+  transition: background 0.15s var(--ease-out);
+}
+.enrollButton:hover {
+  background: var(--signal-cyan-dim);
+}
+
+.error {
+  background: var(--signal-red);
+  color: #ffffff;
+  font-size: 13px;
+  padding: 10px 12px;
+  border-radius: var(--radius-sm);
+  margin-bottom: 16px;
+  max-width: 560px;
+}
+
+.loading {
+  padding: 40px;
+  text-align: center;
+  color: var(--ink-muted);
+  font-size: 13px;
+}
+
+@media (max-width: 560px) {
+  .headerRowTwo {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+  }
+}
