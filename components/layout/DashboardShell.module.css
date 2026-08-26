@@ -1,0 +1,4 @@
+.wrapper { display: flex; min-height: 100vh; }
+.contentColumn { display: flex; flex: 1; flex-direction: column; min-width: 0; }
+.content { flex: 1; max-width: 1580px; width: 100%; margin: 0 auto; padding: 34px 42px 52px; animation: rise-in .42s var(--ease-out) both; }
+@media (max-width: 860px) { .wrapper { display: block; } .content { padding: 25px 18px 40px; } }

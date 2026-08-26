@@ -1,0 +1,6 @@
+.panel { min-height: 330px; overflow: hidden; border: 1px solid #e1e9e2; border-radius: 16px; background: #fff; box-shadow: var(--shadow-card); }
+.title { padding: 23px 24px 8px; color: #234530; font-family: var(--font-display); font-size: 21px; }
+.list { padding: 6px 24px 16px; }
+.row { display: flex; align-items: center; justify-content: space-between; gap: 10px; padding: 13px 0; border-bottom: 1px solid #edf1ed; }.row:last-child { border-bottom: 0; }
+.rowLeft { display: flex; align-items: center; gap: 10px; min-width: 0; }.dotGranted, .dotDenied { width: 8px; height: 8px; flex-shrink: 0; border-radius: 50%; }.dotGranted { background: #1b8b51; }.dotDenied { background: #c65b4d; }
+.name { color: #294633; font-size: 12px; font-weight: 750; }.matric { margin-left: 6px; color: #88948b; font-family: var(--font-mono); font-size: 9px; }.meta { color: #77867c; font-family: var(--font-mono); font-size: 10px; }.empty { padding: 60px 24px; color: #819087; text-align: center; font-size: 12px; }

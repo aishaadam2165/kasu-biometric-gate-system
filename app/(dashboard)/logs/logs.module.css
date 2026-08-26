@@ -1,0 +1,4 @@
+.header { display: flex; align-items: flex-end; justify-content: space-between; gap: 18px; margin-bottom: 24px; }
+.count { color: #6f8074; font-family: var(--font-mono); font-size: 12px; font-weight: 600; }
+.cappedNote { margin-top: 7px; color: #a27d1b; font-size: 10px; }.loading { padding: 62px 20px; color: var(--ink-muted); text-align: center; font-size: 13px; }
+@media (max-width: 600px) { .header { align-items: start; flex-direction: column; margin-bottom: 18px; } }

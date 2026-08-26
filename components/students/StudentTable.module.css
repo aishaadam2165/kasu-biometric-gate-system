@@ -1,0 +1,4 @@
+.table { width: 100%; border-collapse: collapse; font-size: 12px; }
+.th { padding: 13px 14px; color: #829087; border-bottom: 1px solid #e6ece6; background: #fbfcfb; font-size: 10px; font-weight: 800; letter-spacing: .08em; text-align: left; text-transform: uppercase; }
+.row { border-bottom: 1px solid #edf1ed; transition: background-color .15s var(--ease-out); }.row:hover { background: #f8fbf8; }.td { padding: 14px; color: #607065; }
+.mono { color: #68796e; font-family: var(--font-mono); font-size: 10px; }.link { color: #176f42; font-weight: 750; }.badge { display: inline-flex; padding: 4px 8px; border-radius: 99px; font-size: 10px; font-weight: 800; }.badgeGreen { color: #0e7340; background: #e0f3e7; }.badgeAmber { color: #85650e; background: #fff1c7; }.badgeRed { color: #a33d31; background: #fbe4df; }.empty { padding: 54px; color: #87958b; text-align: center; font-size: 12px; }

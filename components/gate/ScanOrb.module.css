@@ -1,0 +1,93 @@
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+}
+
+.orb {
+  width: 160px;
+  height: 160px;
+  border-radius: 50%;
+  border: 3px solid var(--line);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--panel-raised);
+  transition: border-color 0.3s var(--ease-out), box-shadow 0.3s var(--ease-out);
+}
+
+.innerDot {
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  transition: background 0.3s var(--ease-out);
+}
+
+.label {
+  font-family: var(--font-mono);
+  font-size: 13px;
+  letter-spacing: 0.12em;
+}
+
+/* State variants */
+.idle {
+  border-color: var(--line);
+  box-shadow: none;
+}
+.idle .innerDot {
+  background: var(--text-faint);
+}
+.idle ~ .label,
+.stateIdle {
+  color: var(--text-faint);
+}
+
+.scanning {
+  border-color: var(--signal-cyan);
+  box-shadow: 0 0 40px 6px rgba(61, 219, 217, 0.4);
+  animation: pulse 1.2s ease-in-out infinite;
+}
+.scanning .innerDot {
+  background: var(--signal-cyan);
+}
+.stateScanning {
+  color: var(--signal-cyan);
+}
+
+.granted {
+  border-color: var(--signal-green);
+  box-shadow: 0 0 40px 6px rgba(52, 211, 153, 0.5);
+}
+.granted .innerDot {
+  background: var(--signal-green);
+}
+.stateGranted {
+  color: var(--signal-green);
+}
+
+.denied {
+  border-color: var(--signal-red);
+  box-shadow: 0 0 40px 6px rgba(229, 72, 77, 0.5);
+}
+.denied .innerDot {
+  background: var(--signal-red);
+}
+.stateDenied {
+  color: var(--signal-red);
+}
+
+@keyframes pulse {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.04);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .scanning {
+    animation: none;
+  }
+}

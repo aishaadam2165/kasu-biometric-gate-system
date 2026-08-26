@@ -1,0 +1,8 @@
+.card { min-height: 132px; position: relative; overflow: hidden; padding: 18px; border: 1px solid #e1e9e2; border-radius: 16px; background: #fff; box-shadow: var(--shadow-card); transition: transform .18s var(--ease-out), box-shadow .18s var(--ease-out); }
+.card::after { content: ""; position: absolute; right: -42px; bottom: -58px; width: 135px; height: 135px; border: 1px solid currentColor; border-radius: 50%; opacity: .1; }
+.card:hover { box-shadow: 0 19px 34px rgba(15,56,33,.12); transform: translateY(-3px); }
+.label { color: #78867c; font-size: 10px; font-weight: 800; letter-spacing: .09em; text-transform: uppercase; }
+.value { margin-top: 19px; color: #1e402b; font-family: var(--font-display); font-size: 32px; line-height: 1; }
+.valueGreen { color: #16804b; }.valueRed { color: #bd4b3c; }.valueCyan { color: #967817; }.valueAmber { color: #bd7924; }
+.sublabel { margin-top: 9px; color: #8a968d; font-size: 10px; }
+@media (max-width: 560px) { .card { min-height: 120px; padding: 15px; } .value { font-size: 28px; } }

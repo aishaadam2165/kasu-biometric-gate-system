@@ -1,0 +1,8 @@
+.welcome { max-width: 690px; margin-bottom: 28px; color: var(--ink-muted); font-size: 14px; line-height: 1.65; }
+.welcome strong { color: #176d40; }
+.statsGrid { display: grid; grid-template-columns: repeat(6, minmax(145px, 1fr)); gap: 15px; margin-bottom: 24px; }
+.mainGrid { display: grid; grid-template-columns: minmax(0, 1.35fr) minmax(300px, .8fr); gap: 22px; }
+.loading { padding: 66px 25px; color: var(--ink-muted); text-align: center; font-size: 13px; }
+@media (max-width: 1250px) { .statsGrid { grid-template-columns: repeat(3, 1fr); } }
+@media (max-width: 900px) { .mainGrid { grid-template-columns: 1fr; } }
+@media (max-width: 560px) { .statsGrid { grid-template-columns: repeat(2, 1fr); gap: 11px; } }

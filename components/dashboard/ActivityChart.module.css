@@ -1,0 +1,7 @@
+.panel { min-height: 330px; padding: 24px; border: 1px solid #e1e9e2; border-radius: 16px; background: #fff; box-shadow: var(--shadow-card); }
+.title { color: #234530; font-family: var(--font-display); font-size: 21px; }
+.legend { display: flex; gap: 15px; margin: 10px 0 12px; color: #78877d; font-size: 10px; }
+.legendItem { display: inline-flex; align-items: center; gap: 6px; }
+.legendDotGranted, .legendDotDenied { width: 7px; height: 7px; border-radius: 50%; }
+.legendDotGranted { background: #1b8b51; box-shadow: 0 0 0 4px rgba(27,139,81,.1); }
+.legendDotDenied { background: #c65b4d; box-shadow: 0 0 0 4px rgba(198,91,77,.1); }

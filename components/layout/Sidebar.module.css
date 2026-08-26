@@ -1,0 +1,13 @@
+.sidebar { width: 258px; flex-shrink: 0; min-height: 100vh; padding: 24px 13px 18px; position: sticky; top: 0; overflow: hidden; background: radial-gradient(circle at 18% 4%, #277c4d 0, transparent 31%), linear-gradient(165deg, #11452a 0%, #0a2f1b 57%, #072115 100%); box-shadow: 12px 0 28px rgba(4, 37, 19, .08); }
+.sidebar::after { content: ""; position: absolute; right: -180px; bottom: -220px; width: 390px; height: 390px; border: 1px solid rgba(241, 211, 103, .15); border-radius: 50%; }
+.brand { display: flex; align-items: center; gap: 11px; position: relative; z-index: 1; padding: 0 10px 21px; margin-bottom: 20px; border-bottom: 1px solid rgba(255,255,255,.12); }
+.brandLogo { width: 44px; height: 44px; flex-shrink: 0; object-fit: contain; padding: 2px; border-radius: 50%; background: #fff; box-shadow: 0 5px 14px rgba(0,0,0,.2); }
+.brandText { display: flex; flex-direction: column; }
+.brandEyebrow { color: #e9ca66; font-family: var(--font-mono); font-size: 10px; letter-spacing: .14em; text-transform: uppercase; }
+.brandTitle { margin-top: 4px; color: #fff; font-family: var(--font-display); font-size: 20px; letter-spacing: -.03em; }
+.nav { position: relative; z-index: 1; display: flex; flex-direction: column; gap: 5px; }
+.navItem { position: relative; display: flex; align-items: center; min-height: 45px; padding: 0 13px; color: #bfd4c3; border-radius: 10px; font-size: 13px; font-weight: 650; transition: transform .16s var(--ease-out), background-color .16s var(--ease-out), color .16s var(--ease-out), box-shadow .16s var(--ease-out); }
+.navItem:hover { color: #fff; background: rgba(255,255,255,.09); transform: translateX(3px); }
+.navItemActive { color: #1d3324; background: linear-gradient(105deg, #f2d66e, #d6b03b); box-shadow: 0 9px 18px rgba(0,0,0,.17); }
+.activeBar { display: none; }
+@media (max-width: 860px) { .sidebar { width: 100%; min-height: auto; padding: 14px 16px; position: static; } .brand { padding-bottom: 12px; margin-bottom: 11px; } .brandLogo { width: 34px; height: 34px; } .brandTitle { font-size: 17px; } .nav { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 5px; overflow-x: auto; } .navItem { justify-content: center; min-width: 112px; min-height: 38px; padding: 0 9px; font-size: 11px; white-space: nowrap; } }
