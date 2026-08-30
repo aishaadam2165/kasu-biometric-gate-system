@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
-import { loadFaceApiModels, faceapi } from "@/lib/biometric/faceapiLoader";
+import { loadFaceApiModels, getLoadedFaceApi } from "@/lib/biometric/faceapiLoader";
 import styles from "./FaceCapture.module.css";
 
 /**
@@ -62,7 +62,9 @@ export default function FaceCapture({ onCaptured, captured }) {
     setError("");
     setCapturing(true);
     try {
-      const detection = await faceapi
+      const faceapi = await getLoadedFaceApi();
+
+const detection = await faceapi
         .detectSingleFace(videoRef.current, new faceapi.TinyFaceDetectorOptions())
         .withFaceLandmarks()
         .withFaceDescriptor();

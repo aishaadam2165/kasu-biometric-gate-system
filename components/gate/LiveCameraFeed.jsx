@@ -5,10 +5,10 @@ import { loadFaceApiModels, faceapi } from "@/lib/biometric/faceapiLoader";
 import styles from "./LiveCameraFeed.module.css";
 
 /**
- * One-shot face descriptor capture for gate verification. Unlike
- * FaceCapture.jsx (used at enrolment), this doesn't save an image — it
- * only extracts a descriptor to send for 1:1 comparison against the
- * already-identified student's stored embedding.
+ * One-shot face descriptor capture for gate verification.
+ *
+ * Face-api is loaded only in the browser to prevent Next.js SSR
+ * from evaluating the face-api package on the server.
  */
 export default function LiveCameraFeed({ onVerify, disabled }) {
   const videoRef = useRef(null);
@@ -23,18 +23,36 @@ export default function LiveCameraFeed({ onVerify, disabled }) {
 
     async function init() {
       try {
+        setError("");
+
         await loadFaceApiModels();
-        const stream = await navigator.mediaDevices.getUserMedia({ video: {} });
+
+        if (cancelled) return;
+
+        const stream = await navigator.mediaDevices.getUserMedia({
+          video: true,
+          audio: false,
+        });
+
         if (cancelled) {
-          stream.getTracks().forEach((t) => t.stop());
+          stream.getTracks().forEach((track) => track.stop());
           return;
         }
+
         streamRef.current = stream;
-        if (videoRef.current) videoRef.current.srcObject = stream;
+
+        if (videoRef.current) {
+          videoRef.current.srcObject = stream;
+        }
+
         setReady(true);
       } catch (err) {
+        console.error("Face camera initialization error:", err);
+
+        if (cancelled) return;
+
         setError(
-          err.name === "NotAllowedError"
+          err?.name === "NotAllowedError"
             ? "Camera access denied. Allow permission and reload."
             : "Could not start camera or load face models."
         );
@@ -42,30 +60,57 @@ export default function LiveCameraFeed({ onVerify, disabled }) {
     }
 
     init();
+
     return () => {
       cancelled = true;
-      streamRef.current?.getTracks().forEach((t) => t.stop());
+
+      streamRef.current?.getTracks().forEach((track) => {
+        track.stop();
+      });
+
+      streamRef.current = null;
     };
   }, []);
 
   async function handleVerify() {
+    if (!videoRef.current || verifying || disabled) {
+      return;
+    }
+
     setError("");
     setVerifying(true);
+
     try {
+     const faceapi = await getLoadedFaceApi();
+
       const detection = await faceapi
-        .detectSingleFace(videoRef.current, new faceapi.TinyFaceDetectorOptions())
+        .detectSingleFace(
+          videoRef.current,
+          new faceapi.TinyFaceDetectorOptions()
+        )
         .withFaceLandmarks()
         .withFaceDescriptor();
 
       if (!detection) {
-        setError("No face detected. Face the camera directly and try again.");
+        setError(
+          "No face detected. Face the camera directly and try again."
+        );
         setVerifying(false);
         return;
       }
 
-      streamRef.current?.getTracks().forEach((t) => t.stop());
+      streamRef.current?.getTracks().forEach((track) => {
+        track.stop();
+      });
+
+      streamRef.current = null;
+
       await onVerify(Array.from(detection.descriptor));
+
+      setVerifying(false);
     } catch (err) {
+      console.error("Face verification error:", err);
+
       setError("Face verification failed. Try again.");
       setVerifying(false);
     }
@@ -74,8 +119,19 @@ export default function LiveCameraFeed({ onVerify, disabled }) {
   return (
     <div className={styles.wrapper}>
       <div className={styles.videoBox}>
-        <video ref={videoRef} autoPlay muted playsInline className={styles.video} />
-        {!ready && <div className={styles.overlay}>{error ? "—" : "Loading camera…"}</div>}
+        <video
+          ref={videoRef}
+          autoPlay
+          muted
+          playsInline
+          className={styles.video}
+        />
+
+        {!ready && (
+          <div className={styles.overlay}>
+            {error ? "—" : "Loading camera…"}
+          </div>
+        )}
       </div>
 
       <button
